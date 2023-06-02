@@ -1,0 +1,111 @@
+@font-face {
+    font-family: "Open Sans";
+    src : url("fonts/OpenSans_Condensed-Regular.ttf");
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', serif;
+}
+
+$button-color: #FDD92A;
+$bg-grey: #F1F1F1;
+
+.App {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 20px;
+
+    padding: 20px;
+    
+    .circled {
+        border-radius: 20px;
+    }
+
+    .Sports {
+        grid-column: 1 / 8;
+
+        display: grid;
+        grid-template: 1fr;
+        row-gap: 40px;
+
+        h1 {
+            background-color: $bg-grey;
+            padding: 10px 20px;
+        }
+
+        .Match {
+            padding: 10px;
+            box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.15);
+
+            .bets-wrapper {
+
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                padding: 10px;
+
+                .centered {
+                    display: flex;
+                    justify-content: center;
+                }
+
+                .match-league, .match-time {
+                    font-size: 1.25rem;
+                }
+
+                .match-league {
+                    font-weight: bold;
+                }
+
+                .match-time {
+                    display: flex;
+                    justify-content: right;
+                }
+
+                .TeamPic {
+                    padding: 10px;
+                    justify-self: center;
+                    width: 100%;
+                    img {
+                        max-width: 100px;
+                    }
+                }
+
+                .TeamName {
+                    padding: 10px;
+                    font-size: 1.25rem;
+                }
+
+                .Draw {
+                    display: flex;
+                    align-items: center;
+                    flex-direction: column;
+                    justify-content: center;
+                    font-size: 50px;
+                    grid-row: span 2;
+                }
+
+                .BetButton {
+                    padding: 10px;
+
+                    button {
+                        border: none;
+                        background-color: white;
+                        padding: 8px 40px;
+                        box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.15);
+                        font-weight: bold;
+                        font-size: 1.25rem;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+    
+    .Coupon {
+        border: 1px solid black;
+        grid-column: 8 / 13;
+    }
+}
