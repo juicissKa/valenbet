@@ -1,6 +1,6 @@
 import '../style.scss';
 import { useState } from 'react';
-import Match from './Match';
+import Match from './table-components/Match';
 
 function Sports() {
     const matches = [{
@@ -39,7 +39,7 @@ function Sports() {
     ];
     return (
         <div className="Sports">
-            <h1 className='circled'>Главные события</h1>
+            <h1>Главные события</h1>
             <Match matchInfo={matches[0]} />
             <Match matchInfo={matches[1]} />
             <Match matchInfo={matches[2]} />

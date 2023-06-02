@@ -1,4 +1,3 @@
-import '../style.scss';
 import { useState } from 'react';
 import TeamPic from './TeamPic';
 import Draw from './Draw';
