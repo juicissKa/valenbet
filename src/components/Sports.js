@@ -2,8 +2,9 @@ import '../style.scss';
 import { useState } from 'react';
 import Match from './table-components/Match';
 
-function Sports() {
+function Sports({handleAddCoupon}) {
     const matches = [{
+        matchId: 1,
         home: "Barcelona",
         guest: "Real Madrid",
         league: "La Liga",
@@ -15,6 +16,7 @@ function Sports() {
         guest_pic: "images/real_madrid.png"
     },
     {
+        matchId: 2,
         home: "Bayern Munich",
         guest: "Borussia Dortmund",
         league: "Bundesliga",
@@ -26,6 +28,7 @@ function Sports() {
         guest_pic: "images/borussia.png"
     },
     {
+        matchId: 3,
         home: "Zenit",
         guest: "Spartak",
         league: "RPL",
@@ -37,14 +40,15 @@ function Sports() {
         guest_pic: "images/spartak.png"
     }
     ];
+
+    const matchesList = matches.map((match, index) => <Match key={index} matchInfo={match} handleAddCoupon={handleAddCoupon} />);  
+
     return (
         <div className="Sports">
             <h1>Главные события</h1>
-            <Match matchInfo={matches[0]} />
-            <Match matchInfo={matches[1]} />
-            <Match matchInfo={matches[2]} />
+            <div className='MatchesList'>{matchesList}</div>
         </div>
-  );
+    );
 }
 
 export default Sports;

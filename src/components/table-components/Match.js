@@ -4,7 +4,7 @@ import Draw from './Draw';
 import BetButton from './BetButton';
 import TeamName from './TeamName';
 
-function Match({matchInfo}) {
+function Match({matchInfo, handleAddCoupon}) {
 
 
     return (
@@ -21,9 +21,9 @@ function Match({matchInfo}) {
                 <TeamName name={matchInfo.home}/>
                 <TeamName name={matchInfo.guest}/>
                 
-                <BetButton coef={matchInfo.home_coef} />
-                <BetButton coef={matchInfo.draw_coef} />
-                <BetButton coef={matchInfo.guest_coef} />
+                <BetButton coef={matchInfo.home_coef} matchInfo = {matchInfo} team={matchInfo.home} handleAddCoupon={handleAddCoupon} />
+                <BetButton coef={matchInfo.draw_coef} matchInfo = {matchInfo} team={"Ничья"} handleAddCoupon={handleAddCoupon} />
+                <BetButton coef={matchInfo.guest_coef} matchInfo = {matchInfo} team={matchInfo.guest} handleAddCoupon={handleAddCoupon} />
             </div>
         </div>
     );

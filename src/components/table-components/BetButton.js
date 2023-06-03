@@ -1,9 +1,10 @@
 import React from 'react'
+import { useState } from 'react'
 
-const BetButton = ({coef}) => {
+const BetButton = ({coef, matchInfo, team, handleAddCoupon}) => {
   return (
     <div className='BetButton centered'>
-        <button className='circled'>{coef}</button>
+        <button className='circled' onClick={() => handleAddCoupon(matchInfo, coef, team)}>{coef}</button>
     </div>
   )
 }
