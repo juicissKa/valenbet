@@ -25,6 +25,10 @@ $bg-grey: #F1F1F1;
 
     padding: 20px;
 
+    @media screen and (max-width: 1000px) {
+        display: block;
+    }
+
     .circled {
         border-radius: 20px;
     }
@@ -33,6 +37,8 @@ $bg-grey: #F1F1F1;
         display: flex;
         justify-content: center;
     }
+
+    /* Компонент с матчами */
 
     .Sports {
         grid-column: 1 / 9;
@@ -83,12 +89,17 @@ $bg-grey: #F1F1F1;
                     width: 100%;
                     img {
                         max-width: 100px;
+
+                        @media screen and (max-width: 600px) {
+                            max-width: 60px;
+                        }
                     }
                 }
 
                 .TeamName {
                     padding: 10px;
                     font-size: 1.25rem;
+                    text-align: center;
                 }
 
                 .Draw {
@@ -111,17 +122,31 @@ $bg-grey: #F1F1F1;
                         font-weight: bold;
                         font-size: 1.25rem;
                         cursor: pointer;
+
+                        @media screen and (max-width: 600px) {
+                           padding: 4px 20px;
+                        }
+                        
                     }
                 }
             }
         }
     }
     
+    /* Компонент с ставкой */
+
     .Coupon {
         grid-column: 9/ 13;
         padding: 40px;
         box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.15);
-        background-color: white;
+        background: white;
+
+        @media screen and (max-width: 1000px) {
+            background: none;
+            box-shadow: none;
+            display: block;
+            width: 100%;
+        }
 
         .coupon-window {
             box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.15);
@@ -192,7 +217,7 @@ $bg-grey: #F1F1F1;
             .bet-info-wrapper {
                 width: 100%;
                 padding-top: 10px;
-                .coef, .payout {
+                div {
                     display: flex;
                     justify-content: space-between;
                     width: 100%;

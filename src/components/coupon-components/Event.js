@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Event = ({matchInfo, coef, team, handleDelete, eventIndex}) => {
+const Event = ({matchInfo, coef, team, handleDelete, eventIndex, resultId}) => {
 
     return (
         <div className='Event'>
